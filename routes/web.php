@@ -14,4 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Home::class, 'index'])->name('home.index');
+Route::get('/', [Home::class, 'index'])->name('contato.index');
+Route::get('/create', [Home::class, 'create'])->name('contato.create');
+
