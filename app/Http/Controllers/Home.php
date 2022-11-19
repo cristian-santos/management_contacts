@@ -24,9 +24,9 @@ class Home extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'name' => 'required|min:5|max:100',
-            'contact' => 'required|max:9',
-            'email' => 'required|email'
+            'name' => 'required|min:5|unique:contact|max:100',
+            'contact' => 'required|unique:contact|max:9',
+            'email' => 'required|unique:contact|email'
         ];
 
         $feedback = [
@@ -47,8 +47,32 @@ class Home extends Controller
 
     }
 
-    public function edit()
+    public function edit($id)
     {
-        return view('edit');
+        $contact = Contact::findorFail($id);
+        return view('edit', compact('contact'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $rules = [
+            'name' => 'required|min:5|max:100',
+            'contact' => 'required|max:9',
+            'email' => 'required|email'
+        ];
+
+        $feedback = [
+            'required' => 'The :attribute field must be filled',
+            'name.min' => 'The :attribute field must be at least 3 characters long',
+            'name.max' => 'The :attribute field must have a maximum of 100 characters',
+            'email' => 'The :attribute field was not filled in correctly',
+        ];
+        $request->validate($rules, $feedback);
+
+        $contact = Contact::findorFail($id);
+
+        $contact->update($request->all());
+
+        return redirect()->route('contact.edit', $id)->with('message', 'Contact edited successfully');
     }
 }

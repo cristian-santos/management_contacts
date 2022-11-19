@@ -18,7 +18,7 @@
                 <h4>Contact list</h4>
                 <h6>Total contacts: {{$count}}</h6>
                 <a href="{{ route('contact.create') }}">
-                    <button class="btn btn-primary" title="Editar contato">New contact</button>
+                    <button class="btn btn-primary" title="Edit contact">New contact</button>
                 </a>
                 <hr />
 
@@ -30,7 +30,7 @@
                         </div>
 
                         <div class="col-sm-3">
-                            <a href="{{ route('contact.edit') }}" style="text-decoration: none">
+                            <a href="{{ route('contact.edit', $contacts->id) }}" style="text-decoration: none">
                                 <button class="btn btn-primary" title="Edit contact"><i class="fa-solid fa-pen-to-square"></i></button>
                             </a>
 

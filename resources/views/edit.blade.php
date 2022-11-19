@@ -7,6 +7,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="./assets/css/create.css" rel="stylesheet">
     <title>Edit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .card {
+            border: none;
+            margin-top: 25px;
+        }
+
+        .editar {
+            box-shadow:  2px 5px 20px 8px rgb(113, 143, 240);
+            background-color: #fff;
+            border-radius: 20px;
+        }
+
+    </style>
 </head>
 
 <body class="fundo">
@@ -18,18 +37,22 @@
                 <h3>Edit contact</h3>
             </div>
 
+            @include('components.alert')
+            <form action="{{ route('contact.update', $contact->id) }}" method="POST">
+                @method('PUT')
+                @csrf
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" placeholder="name" name="name">
+                <input type="text" class="form-control phone @error('name') is-invalid @enderror" placeholder="name" name="name" value="{{ old('name') ?? $contact->name }}">
                 <label>Name</label>
             </div>
 
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" placeholder="contact" name="email">
+                <input type="phone" class="form-control" maxlength="9" placeholder="contact" name="contact" value="{{ old('contact') ?? $contact->contact }}">
                 <label>Contact</label>
             </div>
 
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" placeholder="name" name="email">
+                <input type="text" class="form-control" placeholder="name" name="email" value="{{old('email') ?? $contact->email}}">
                 <label>Email</label>
             </div>
             <div class="form-floating d-flex justify-content-end">
@@ -39,6 +62,7 @@
                 <button type="submit" class="btn btn-success btn-rounded waves-effect me-2 mb-2">
                     <i class="mdi mdi-check me-1"></i>Save</button>
             </div>
+            </form>
         </div>
     </div>
 </div>

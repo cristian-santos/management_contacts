@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [Home::class, 'index'])->name('contact.index');
 Route::get('/create', [Home::class, 'create'])->name('contact.create');
-Route::get('/edit', [Home::class, 'edit'])->name('contact.edit');
+Route::get('/edit/{id}', [Home::class, 'edit'])->name('contact.edit');
 Route::post('/store', [Home::class, 'store'])->name('contact.store');
+Route::put('/update/{id}', [Home::class, 'update'])->name('contact.update');
 
