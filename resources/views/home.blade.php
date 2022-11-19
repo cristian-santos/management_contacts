@@ -7,18 +7,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="./assets/css/style.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d093a04ba7.js" crossorigin="anonymous"></script>
-    <title>Listagem</title>
+    <title>Listing</title>
 </head>
 
 <body class="fundo">
 <div class="col-md-12">
-    <div class="container pagina">
+    <div class="container page">
         <div class="row">
             <div class="col">
-                <h4>Listagem de contatos</h4>
-                <h6>Total de contatos: {{$count}}</h6>
-                <a href="{{ route('contato.create') }}">
-                    <button class="btn btn-primary" title="Editar contato">Novo Contato</button>
+                <h4>Contact list</h4>
+                <h6>Total contacts: {{$count}}</h6>
+                <a href="{{ route('contact.create') }}">
+                    <button class="btn btn-primary" title="Editar contato">New contact</button>
                 </a>
                 <hr />
 
@@ -30,12 +30,12 @@
                         </div>
 
                         <div class="col-sm-3">
-                            <a href="{{ route('contato.edit') }}" style="text-decoration: none">
-                                <button class="btn btn-primary" title="Editar contato"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <a href="{{ route('contact.edit') }}" style="text-decoration: none">
+                                <button class="btn btn-primary" title="Edit contact"><i class="fa-solid fa-pen-to-square"></i></button>
                             </a>
 
                             <a href="">
-                                <button class="btn btn-danger" title="Excluir contato"><i class="fa-solid fa-trash"></i></button>
+                                <button class="btn btn-danger" title="Delete contact"><i class="fa-solid fa-trash"></i></button>
                             </a>
                         </div>
                     </div>
