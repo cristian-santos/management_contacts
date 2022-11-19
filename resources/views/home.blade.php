@@ -29,19 +29,24 @@
                             <hr>
                         </div>
 
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 d-flex justify-content-center">
                             <a href="{{route('contact.show', $contact->id)}}" style="text-decoration: none">
                                 <button class="btn btn-success" title="Show contact"><i class="fa-regular fa-eye"></i></button>
-                            </a>
+                            </a>&nbsp
 
                             <a href="{{ route('contact.edit', $contact->id) }}" style="text-decoration: none">
                                 <button class="btn btn-primary" title="Edit contact"><i class="fa-solid fa-pen-to-square"></i></button>
-                            </a>
+                            </a>&nbsp
 
-                            <a href="{{ route('contact.destroy', $contact->id) }}">
-                                <button class="btn btn-danger" title="Delete contact"><i class="fa-solid fa-trash"></i></button>
-                            </a>
+                            <div>
+                                <form action="{{route('contact.destroy', $contact->id)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger" type="submit" title="Delete contact"><i class="fa-solid fa-trash"></i></button>
+                                </form>
+                            </div>
                         </div>
+
                     </div>
                 @endforeach
             </div>

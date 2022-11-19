@@ -38,7 +38,7 @@
                 <h3>Resgister contact</h3>
             </div>
                 <div class="form-floating mb-3">
-                    <table class="table">
+                    <table class="table table-striped">
                         <thead>
                         <tr>
                             <th scope="col">Id</th>

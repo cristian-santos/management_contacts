@@ -10,8 +10,8 @@ class Home extends Controller
 {
     public function index()
     {
-        $data = DB::table('contact')->orderBy('name')->get();
-        $count = DB::table('contact')->count();
+        $data = Contact::orderBy('name')->get();
+        $count = Contact::orderBy('contact')->count();
 
         return view('home', compact('data', 'count'));
     }
@@ -26,13 +26,14 @@ class Home extends Controller
         $rules = [
             'name' => 'required|min:5|unique:contact|max:100',
             'contact' => 'required|unique:contact|max:9',
-            'email' => 'required|unique:contact|email'
+            'email' => 'required|unique:contact|email|max:100'
         ];
 
         $feedback = [
             'required' => 'The :attribute field must be filled',
             'name.min' => 'The :attribute field must be at least 3 characters long',
             'name.max' => 'The :attribute field must have a maximum of 100 characters',
+            'email.max' => 'The :attribute field must have a maximum of 25 characters',
             'email' => 'The :attribute field was not filled in correctly',
         ];
         $request->validate($rules, $feedback);
@@ -56,7 +57,7 @@ class Home extends Controller
 
     public function edit($id)
     {
-        $contact = DB::table('contact')->where('id', $id)->first();
+        $contact = Contact::find($id);
         return view('edit', compact('contact'));
     }
 
@@ -85,7 +86,7 @@ class Home extends Controller
 
     public function destroy($id)
     {
-        $contact = DB::table('contact')->where('id', $id)->first();
+        $contact = Contact::destroy($id);
 
         return redirect()->route('contact.index')->with('message', 'Contact deleted successfully');
 

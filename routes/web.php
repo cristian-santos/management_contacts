@@ -20,5 +20,5 @@ Route::get('/show/{id}', [Home::class, 'show'])->name('contact.show');
 Route::get('/edit/{id}', [Home::class, 'edit'])->name('contact.edit');
 Route::post('/store', [Home::class, 'store'])->name('contact.store');
 Route::put('/update/{id}', [Home::class, 'update'])->name('contact.update');
-Route::delete('/destroy/{id}', [Home::class, 'destroy'])->name('contact.destroy');
+Route::post('/destroy/{id}', [Home::class, 'destroy'])->name('contact.destroy');
 

@@ -42,7 +42,7 @@
                 @method('PUT')
                 @csrf
             <div class="form-floating mb-3">
-                <input type="text" class="form-control phone @error('name') is-invalid @enderror" placeholder="name" name="name" value="{{ old('name') ?? $contact->name }}">
+                <input type="text" class="form-control phone" placeholder="name" name="name" value="{{ old('name') ?? $contact->name }}">
                 <label>Name</label>
             </div>
 

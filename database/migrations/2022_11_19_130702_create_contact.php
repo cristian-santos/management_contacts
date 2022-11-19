@@ -17,7 +17,7 @@ class CreateContact extends Migration
             $table->increments('id');
             $table->string('name', 100)->nullable();
             $table->string('contact', 9)->unique()->nullable();
-            $table->string('email', 25)->unique()->nullable();
+            $table->string('email', 50)->unique()->nullable();
             $table->timestamps();
         });
     }

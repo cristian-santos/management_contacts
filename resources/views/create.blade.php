@@ -26,7 +26,7 @@
                     <label>Name</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" placeholder="Contact" name="contact">
+                    <input type="phone" class="form-control" maxlength="9" placeholder="Contact" name="contact">
                     <label>Contact</label>
                 </div>
                 <div class="form-floating mb-3">
