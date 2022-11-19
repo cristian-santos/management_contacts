@@ -14,15 +14,15 @@
             <form action="{{ route('contact.store') }}" method="POST">
                 @csrf
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" placeholder="Nome" name="name">
+                    <input type="text" class="form-control" placeholder="Nome" name="name" value="{{ old('name') }}">
                     <label>Name</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="phone" class="form-control" maxlength="9" placeholder="Contact" name="contact">
+                    <input type="phone" class="form-control" maxlength="9" placeholder="Contact" name="contact" value="{{ old('contact')}}">
                     <label>Contact</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" placeholder="E-mail" name="email">
+                    <input type="text" class="form-control" placeholder="E-mail" name="email" value="{{ old('email') }}">
                     <label>E-mail</label>
                 </div>
 

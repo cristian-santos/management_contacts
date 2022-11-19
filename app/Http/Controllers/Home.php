@@ -24,7 +24,7 @@ class Home extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'name' => 'required|min:5|unique:contact|max:100',
+            'name' => 'required|min:5|max:100',
             'contact' => 'required|unique:contact|max:9',
             'email' => 'required|unique:contact|email|max:100'
         ];

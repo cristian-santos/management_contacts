@@ -11,6 +11,7 @@
                 <a href="{{ route('contact.create') }}">
                     <button class="btn btn-primary" title="Edit contact">New contact</button>
                 </a>
+                    @include('components.alert')
                 <hr />
 
                 @foreach($data as $contact)
