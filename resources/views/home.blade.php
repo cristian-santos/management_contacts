@@ -16,15 +16,16 @@
         <div class="row">
             <div class="col">
                 <h4>Listagem de contatos</h4>
-                <h6>Total de contatos: 99</h6>
+                <h6>Total de contatos: {{$count}}</h6>
                 <a href="{{ route('contato.create') }}">
                     <button class="btn btn-primary" title="Editar contato">Novo Contato</button>
                 </a>
-                    <hr />
+                <hr />
 
+                @foreach($data as $contacts)
                 <div class="row mb-3 d-flex align-items-center">
                         <div class="col-sm-9">
-                            Cristian - (79) 99999-9999
+                            {{$contacts->name}} - {{$contacts->contact}}
                             <hr>
                         </div>
 
@@ -38,6 +39,7 @@
                             </a>
                         </div>
                     </div>
+                @endforeach
             </div>
         </div>
     </div>
