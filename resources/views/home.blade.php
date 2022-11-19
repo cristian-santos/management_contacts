@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="./assets/css/style.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d093a04ba7.js" crossorigin="anonymous"></script>
-    <title>To do list</title>
+    <title>Listagem</title>
 </head>
 
 <body class="fundo">
@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="col-sm-3">
-                            <a href="" style="text-decoration: none">
+                            <a href="{{ route('contato.edit') }}" style="text-decoration: none">
                                 <button class="btn btn-primary" title="Editar contato"><i class="fa-solid fa-pen-to-square"></i></button>
                             </a>
 

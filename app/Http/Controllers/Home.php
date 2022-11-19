@@ -15,4 +15,9 @@ class Home extends Controller
     {
         return view('create');
     }
+
+    public function edit()
+    {
+        return view('edit');
+    }
 }
