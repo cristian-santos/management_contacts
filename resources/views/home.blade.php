@@ -22,19 +22,23 @@
                 </a>
                 <hr />
 
-                @foreach($data as $contacts)
+                @foreach($data as $contact)
                 <div class="row mb-3 d-flex align-items-center">
                         <div class="col-sm-9">
-                            {{$contacts->name}} - {{$contacts->contact}}
+                            {{$contact->name}} - {{$contact->contact}}
                             <hr>
                         </div>
 
                         <div class="col-sm-3">
-                            <a href="{{ route('contact.edit', $contacts->id) }}" style="text-decoration: none">
+                            <a href="{{route('contact.show', $contact->id)}}" style="text-decoration: none">
+                                <button class="btn btn-success" title="Show contact"><i class="fa-regular fa-eye"></i></button>
+                            </a>
+
+                            <a href="{{ route('contact.edit', $contact->id) }}" style="text-decoration: none">
                                 <button class="btn btn-primary" title="Edit contact"><i class="fa-solid fa-pen-to-square"></i></button>
                             </a>
 
-                            <a href="">
+                            <a href="{{ route('contact.destroy', $contact->id) }}">
                                 <button class="btn btn-danger" title="Delete contact"><i class="fa-solid fa-trash"></i></button>
                             </a>
                         </div>

@@ -47,9 +47,16 @@ class Home extends Controller
 
     }
 
+    public function show($id)
+    {
+        $contact = DB::table('contact')->where('id', $id)->first();
+
+        return view('show', compact('contact'));
+    }
+
     public function edit($id)
     {
-        $contact = Contact::findorFail($id);
+        $contact = DB::table('contact')->where('id', $id)->first();
         return view('edit', compact('contact'));
     }
 
@@ -69,10 +76,18 @@ class Home extends Controller
         ];
         $request->validate($rules, $feedback);
 
-        $contact = Contact::findorFail($id);
+        $contact = Contact::find($id);
 
         $contact->update($request->all());
 
         return redirect()->route('contact.edit', $id)->with('message', 'Contact edited successfully');
+    }
+
+    public function destroy($id)
+    {
+        $contact = DB::table('contact')->where('id', $id)->first();
+
+        return redirect()->route('contact.index')->with('message', 'Contact deleted successfully');
+
     }
 }

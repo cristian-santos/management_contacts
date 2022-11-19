@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [Home::class, 'index'])->name('contact.index');
 Route::get('/create', [Home::class, 'create'])->name('contact.create');
+Route::get('/show/{id}', [Home::class, 'show'])->name('contact.show');
 Route::get('/edit/{id}', [Home::class, 'edit'])->name('contact.edit');
 Route::post('/store', [Home::class, 'store'])->name('contact.store');
 Route::put('/update/{id}', [Home::class, 'update'])->name('contact.update');
+Route::delete('/destroy/{id}', [Home::class, 'destroy'])->name('contact.destroy');
 

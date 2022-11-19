@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="form-floating d-flex justify-content-end">
-                    <a href="{{ route('contact.index') }}" class="btn btn-primary btn-rounded waves-effect waves-light mb-2 me-2">
+                    <a href="{{ route('contact.index') }}" class="btn btn-dark btn-rounded waves-effect waves-light mb-2 me-2">
                         <i class="mdi mdi-keyboard-return me-1"></i>Back</a>
 
                     <button type="submit" class="btn btn-success btn-rounded waves-effect me-2 mb-2">
